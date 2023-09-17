@@ -1,0 +1,39 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 
+  Note: The styles for this gradient grid background is heavily inspired by the creator of this amazing site (https://dub.sh) – all credits go to them! 
+*/
+
+*{
+  font-family: 'Open Sans', sans-serif;
+}
+
+.tag{
+  @apply font-bold lg:text-[100px] text-[40px] text-green-600;
+}
+.image{
+  @apply flex justify-center items-center gap-x-3;
+}
+.btn{
+  @apply rounded bg-gray-800 hover:bg-gray-900 p-5 w-[300px] text-white text-center font-bold text-xl ;
+}
+.head-rows{
+  @apply px-1  text-xs lg:text-sm whitespace-nowrap lg:whitespace-nowrap font-bold capitalize;
+}
+.actual-rows{
+  @apply capitalize;
+}
+.heading{
+  font-family: 'Open Sans', sans-serif;
+  @apply font-bold text-3xl ;
+}
+.btn_customer{
+  @apply font-bold text-black rounded-md border p-2 hover:bg-gray-200 active:bg-blue-200 focus:bg-blue-200;
+}
+.showDiv{
+  @apply block;
+}
