@@ -15,7 +15,7 @@ const formReducer = (state, event) => {
 const Loginform = () => {
   const [formData, setFormData] = useReducer(formReducer, {});
   const handleSubmit = (e) => {
-    e.preventDefault();
+    // e.preventDefault();
     if (Object.keys(formData) == 0) return console.log("Don't have any data");
     console.log(formData);
   }
@@ -30,14 +30,14 @@ const Loginform = () => {
         <div class="max-w-md w-full mx-auto">
         </div>
         <div class="max-w-md w-full  shadow-lg mx-auto mt-4 bg-white rounded-md p-8 border border-gray-300">
-          <form className="space-y-6" onSubmit={handleSubmit}>
+          <form className="space-y-6" onSubmit={handleSubmit} action='/dashboard' >
             <div className="">
               <label className="font-bold text-sm text-gray-600 block">Username: </label>
-              <input type="text" required onChange={setFormData} name="username" className=" w-full p-2 border border-gray-300 round-lg mt-1" />
+              <input type="text" required onChange={setFormData} name="username" value="cua-admin" disabled className=" w-full p-2 border border-gray-300 round-lg mt-1" />
             </div>
             <div className="">
               <label className="font-bold text-sm text-gray-600 block">Password: </label>
-              <input type="password" onChange={setFormData} name='password' required className=" w-full p-2 border border-gray-300 round-lg mt-1" />
+              <input type="password" onChange={setFormData} name='password'  required value="testing@" disabled className=" w-full p-2 border border-gray-300 round-lg mt-1" />
             </div>
             <div className="flex justify-center">
               <button type='submit' onClick="" className="w-full py-2 px-4 bg-gray-700 hover:bg-gray-800 rounded border border-gray-300 p-2 text-white">Login</button>
