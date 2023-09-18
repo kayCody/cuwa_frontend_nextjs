@@ -59,9 +59,9 @@ const page = () => {
                 <Image src={profile} width={150} className="object-cover" />
               </div>
               <h1 className=' text-xl'>Client ID: <span className='text-blue-600'></span>  </h1>
-              <h1 className='text-xl'>Accounts Number: <span className='text-blue-600'>110000202010</span>  </h1>
-              <h1 className='text-xl'>Client Name: <span className='text-blue-600'>Ama Amoanimaah</span>  </h1>
-              <h1 className='text-xl'>Client Name: <span className='text-blue-600'>Ama Amoanimaah</span>  </h1>
+              <h1 className='text-xl'>Accounts Number: <span className='text-blue-600'></span>  </h1>
+              <h1 className='text-xl'>Client Branch: <span className='text-blue-600'></span>  </h1>
+              <h1 className='text-xl'>Client Name: <span className='text-blue-600'></span>  </h1>
             </div>
           </div>
           <div className='form mt-3 px-3 w-full border-t-2 border-black'>
@@ -71,8 +71,8 @@ const page = () => {
             </div>
             <div className='payment_form hidde' id='payment_form'>
               <h1 className='text-xl font-bold text-center'>Payment Form</h1>
-              <h1 className='text-center mb-2 text-blue-600'>Ama Amoanimaah - [110000202010] </h1>
-              <form action="#" onSubmit={handleSubmit} className='space-y-4'>
+              <h1 className='text-center mb-2 text-blue-600'> - [] </h1>
+              <form action="/dashboard" onSubmit={handleSubmit} className='space-y-4'>
                 <div className=''>
                   <h1 className="font-bold px-2">Payment for: </h1>
                   <div className='px-2 gap-x-2 flex items-center border rounded-md p-2 '>
