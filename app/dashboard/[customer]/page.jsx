@@ -2,7 +2,31 @@
 import React, { Fragment, useEffect, useState, useReducer } from 'react'
 import { Nav, ConfirmationModal } from '@components'
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 import { profile } from '@public/assets';
+
+// export const getStaticPaths = async() => {
+//   const url = 'https://cuwa.pythonanywhere.com/api/customers/'
+//   try {
+//     const response = await fetch(url);
+//     if (!response.ok) {
+//       throw new Error('Network response was not ok');
+//     }
+//     const result = await response.json();
+//   } catch (error) {
+//     console.error('Error fetching data:', error);
+//     throw error;
+//   }
+//   const paths = result.map(customer => {
+//     return {
+//       params:{idNo:customer.idNo.toString()}
+//     }
+//   })
+//   return {
+//     paths, 
+//     fallback: false
+//   }
+// }
 
 const formReducer = (state, event) => {
   return {
@@ -34,18 +58,18 @@ const page = () => {
               <div className='flex justify-start w-full'>
                 <Image src={profile} width={150} className="object-cover" />
               </div>
-              <h1 className=' text-xl'>Client ID: <span className='text-blue-600'>110000</span>  </h1>
+              <h1 className=' text-xl'>Client ID: <span className='text-blue-600'></span>  </h1>
               <h1 className='text-xl'>Accounts Number: <span className='text-blue-600'>110000202010</span>  </h1>
               <h1 className='text-xl'>Client Name: <span className='text-blue-600'>Ama Amoanimaah</span>  </h1>
               <h1 className='text-xl'>Client Name: <span className='text-blue-600'>Ama Amoanimaah</span>  </h1>
             </div>
           </div>
           <div className='form mt-3 px-3 w-full border-t-2 border-black'>
-            <div className='p-3 flex gap-x-3 justify-center w-full items-center'>
+            <div className='p-3 flex gap-x-3 justify-center w-full items-center hidden'>
               <button className='btn_customer active'  >Payment Form</button>
               <button className='btn_customer'  >Payment Records</button>
             </div>
-            <div className='payment_form hidden' id='payment_form'>
+            <div className='payment_form hidde' id='payment_form'>
               <h1 className='text-xl font-bold text-center'>Payment Form</h1>
               <h1 className='text-center mb-2 text-blue-600'>Ama Amoanimaah - [110000202010] </h1>
               <form action="#" onSubmit={handleSubmit} className='space-y-4'>
@@ -53,7 +77,7 @@ const page = () => {
                   <h1 className="font-bold px-2">Payment for: </h1>
                   <div className='px-2 gap-x-2 flex items-center border rounded-md p-2 '>
                     <select name="payment_type" id="payment_type" onChange={setFormData} className='w-full focus:outline-none'  >
-                      <option value=""> ........................................................................ </option>
+                      <option value=""> [select here] </option>
                       <option value="susu">Susu</option>
                       <option value="loan">Loan</option>
                     </select>
@@ -73,9 +97,8 @@ const page = () => {
                 <button onClick={() => setShowModal(true)} className='w-full rounded bg-blue-700 hover:bg-blue-900 text-white p-2 font-bold flex justify-center items-center gap-x-2'><ion-icon name="add"></ion-icon> Add Fund</button>
               </div>
             </div>
-            <div className='payment_records' id='payment_records'>
+            <div className='payment_records hidden' id='payment_records'>
               <h1 className='text-xl font-bold text-center'>Payment Records</h1>
-
             </div>
           </div>
         </div>
